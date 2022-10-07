@@ -1,1 +1,1 @@
-export const backendSRC = 'http://localhost:5000'
+export const backendSRC = 'https://safira-server.herokuapp.com'
