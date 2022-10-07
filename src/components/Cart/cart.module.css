@@ -1,0 +1,137 @@
+.container {
+    margin: 0 auto;
+}
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 33px 80px;
+}
+.cart {
+    max-width: 566px;
+    width: 100%;
+}
+.title {
+    margin-bottom: 38px;
+    font-weight: 400;
+}
+.meta {
+    display: inline-flex;
+    width: 100%;
+    margin: 0 0 18px 0;
+    padding: 0 0 9px 0;
+    border-bottom: 1px solid var(--color-border);
+}
+.item {
+    list-style: none;
+    font-size: 11px;
+}
+.product {
+    margin-left: 40px;
+    width: 25%;
+    text-align: left;
+}
+.name {
+    width: 22%;
+    text-align: center;
+}
+.quantity {
+    width: 25%;
+    text-align: center;
+}
+.price {
+    width: 18%;
+    text-align: center;
+}
+.notification {
+    max-width: 300px;
+    font-size: 11px;
+}
+.order {
+    padding: 32px 30px 29px;
+    max-width: 357px;
+    width: 100%;
+    background-color: var(--color-light);
+}
+.title {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+.subtotal,
+.vat,
+.total {
+    display: flex;
+    justify-content: space-between;
+}
+.subtotal,
+.vat {
+    line-height: 1.43;
+}
+.vat {
+    margin-bottom: 11px;
+}
+.divider {
+    display: block;
+    margin-bottom: 11px;
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px solid var(--color-border);
+}
+.total {
+    font-size: 16px;
+    margin-bottom: 24px;
+}
+.checkout {
+    width: 100%;
+    margin-bottom: 8px;
+    padding: 0 25px;
+    height: 38px;
+    outline: 0;
+    border: 0;
+    background-color: var(--color-dark);
+    color: var(--color-white);
+    cursor: pointer;
+}
+.continue {
+    margin-bottom: 22px;
+    width: 100%;
+    padding: 0 25px;
+    height: 38px;
+    border: 1px solid var(--color-dark);
+    cursor: pointer;
+}
+.info {
+    display: flex;
+    margin-bottom: 12px;
+}
+.info_icon {
+    margin: 0 9px 0 6px;
+}
+.info_content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.info_title {
+    margin: 0 0 6px 0;
+    padding: 0;
+    font-size: 13px;
+    font-weight: 400;
+}
+.info_text {
+    font-size: 11px;
+    line-height: 1.3em;
+    margin: 0;
+    padding: 0;
+}
+
+@media (max-width: 768px) {
+    .info_text {
+        font-size: 9px;
+    }
+}
+@media (max-width: 688px) {
+    .wrapper {
+        flex-direction: column;
+    }
+}

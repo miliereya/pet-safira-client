@@ -1,0 +1,11 @@
+.heading {
+    color: rgb(78, 148, 218);
+    font-size: 32px;
+    text-align: center;
+    text-decoration: underline;
+}
+.add_wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}

@@ -1,0 +1,41 @@
+.section {
+    display: flex;
+    margin-bottom: 30px;
+    position: relative;
+}
+.wrapperRight {
+    text-transform: capitalize;
+    margin-left: 17px;
+}
+.wrapperBottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+    text-transform: capitalize;
+    text-align: center
+}
+.img {
+    background-color: var(--color-loader);
+    border-radius: 10px;
+}
+.name {
+    width: 160px;
+    height: 20px;
+    border-radius: 5px;
+    background-color: var(--color-loader);
+}
+.category {
+    margin-top: 15px;
+    width: 120px;
+    height: 20px;
+    border-radius: 5px;
+    background-color: var(--color-loader);
+}
+.price {
+    margin-top: 20px;
+    width: 160px;
+    height: 15px;
+    border-radius: 5px;
+    background-color: var(--color-loader);
+}

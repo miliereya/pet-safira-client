@@ -1,0 +1,36 @@
+.section {
+    display: flex;
+    margin-bottom: 30px;
+    position: relative;
+}
+.wrapperRight {
+    text-transform: capitalize;
+    margin-left: 17px;
+}
+.wrapperBottom {
+    margin-top: 10px;
+    text-transform: capitalize;
+    text-align: center;
+}
+.name {
+    font-size: 17px;
+    cursor: pointer;
+}
+.category {
+    margin-top: 20px;
+    font-size: 13px;
+}
+.name:hover, .category:hover {
+    color: var(--color-primary)
+}
+.price {
+    margin-top: 20px;
+    color: var(--color-primary);
+    font-size: 18px;
+}
+.old_price {
+    margin-left: 10px;
+    color: var(--color-dark);
+    font-size: 15px;
+    text-decoration: line-through;
+}

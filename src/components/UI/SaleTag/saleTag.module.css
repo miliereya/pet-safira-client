@@ -1,0 +1,19 @@
+.lg {
+    margin: 20px 0 0 20px;
+    padding: 3px;
+    text-transform: uppercase;
+    color: var(--color-white);
+    background-color: var(--color-primary);
+    border-radius: 3px;
+    position: absolute;
+}
+.sm {
+    margin: 5px 0 0 5px;
+    padding: 3px;
+    font-size: 11px;
+    text-transform: uppercase;
+    color: var(--color-white);
+    background-color: var(--color-primary);
+    border-radius: 3px;
+    position: absolute;
+}
