@@ -14,7 +14,7 @@ const LoginForm = () => {
         if (!email_regex.test(email)){
             return setError('Invalid Email')
         }
-        store.login(email, password)
+        await store.login(email, password)
         setError(store.logError)
     }
 

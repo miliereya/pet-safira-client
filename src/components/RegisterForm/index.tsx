@@ -11,7 +11,7 @@ const RegisterForm = () => {
     const [error, setError] = useState<string>('')
     const { store } = useContext(Context)
 
-    const registerHandler = () => {
+    const registerHandler = async () => {
         const email_regex = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu
         if (!email_regex.test(email)){
             return setError('Invalid Email')
@@ -22,7 +22,7 @@ const RegisterForm = () => {
         if(password.length < 6 || password.length > 24){
             return setError('Passwords length should be more than 6 and less than 24')
         }
-        store.registration(email, password)
+        await store.registration(email, password)
         setError(store.regError)
     }
 
