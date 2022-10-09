@@ -55,3 +55,71 @@
 .post_item:hover {
     color: var(--color-primary);
 }
+.btn_scroller{
+    display: none;
+}
+.btn_closer {
+    display: none
+}
+
+@media (max-width: 900px) {
+    .section {
+        width: 33%;
+        margin-left: 2.6%;
+    }
+    .autocomplete_wrapper {
+        width: 110px;
+        margin-left: 90px;
+    }
+}
+@media (max-width: 768px) {
+    .section {
+        position: fixed;
+        width: 320px;
+        height: 100%;
+        margin-left: -15px;
+        z-index: 9999;
+    }
+    .wrapper {
+        top: 0;
+        padding: 50px 20px 20px;
+        height: 100%;
+        position: fixed;
+        background-color: var(--color-border);
+    }
+    .autocomplete_wrapper {
+        position: absolute;
+        width: 189px;
+        margin-left: 100px;
+    }
+    .btn_scroller {
+        position: fixed;
+        display: block;
+        top: 75%;
+        margin-top: -30px;
+        left: -32px;
+        rotate: 90deg;
+        font-size: 24px;
+        padding: 2px 15px;
+        line-height: 18px;
+        border-radius: 10px 10px 0 0;
+        background-color: var(--color-border-dark);
+        color: #000;
+        font-weight: 500;
+        border: 3px solid rgb(74, 74, 74);
+        cursor: pointer;
+    }
+    .btn_closer {
+        position: fixed;
+        display: block;
+        top: 75%;
+        margin-top: -30px;
+        left: 244px;
+        rotate: 90deg;
+        font-size: 24px;
+        padding: 0 15px;
+        line-height: 18px;
+        border-radius: 10px 10px 0 0;
+        cursor: pointer;
+    }
+}

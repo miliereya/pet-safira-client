@@ -19,8 +19,8 @@ export const Hovermenu: FC<HovermenuProps> = ({ menuToggle, location, link_id })
 		<div className={menuCN} style={location==='right' ? {
 			top: '60px',
 		} : {
-			top: '290px',
-			left: '40px'
+			bottom: '-7px',
+			width: '100%'
 		}}>
 			<ButtonPopup to={`/product/${link_id}`} text='Add to Cart'>
 				<CartSVG />

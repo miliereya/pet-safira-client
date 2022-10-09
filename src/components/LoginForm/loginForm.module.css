@@ -1,7 +1,7 @@
 .section {
     display: flex;
     flex-direction: column;
-    width: 320px;
+    width: 300px;
     height: fit-content;
     margin: 0 auto;
     padding: 10px 15px 20px;
@@ -42,4 +42,17 @@
 }
 .btn:hover {
     text-decoration: underline;
+}
+@media (max-width: 768px) {
+    .section {
+        width: 70%;
+    }
+}
+@media (max-width: 425px) {
+    .section {
+        width: 92%;
+    }
+    .input {
+        font-size: 17px;
+    }
 }

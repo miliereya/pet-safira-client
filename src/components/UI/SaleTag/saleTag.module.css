@@ -17,3 +17,9 @@
     border-radius: 3px;
     position: absolute;
 }
+@media (max-width: 500px) {
+    .lg {
+        margin: 10px 0 0 10px;
+        font-size: 12px;
+    }
+}

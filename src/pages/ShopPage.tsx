@@ -39,6 +39,7 @@ export const ShopPage = () => {
             }
         
             setIsLoading(false)
+            window.scrollTo(0, 0)
         }
         const debounce = setTimeout(() => {
 			fetchData()

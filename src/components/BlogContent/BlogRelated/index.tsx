@@ -38,7 +38,7 @@ export const BlogRelated: FC<BlogRelatedProps> = ({self_id}) => {
             <div className={s.wrapper}>
             {posts.map((post:IPost, index: number) => {
                 const { _id, title, img, date } = post
-                if (self_id === _id || index === 4) return
+                if (self_id === _id || index === 3) return
                 return (
                     <NavLink to={`/blog/${_id}`} key={_id} className={s.post_item}>
                         <img className={s.img} src={CreatePostImgLink(img)} alt={title} />

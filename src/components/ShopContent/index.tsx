@@ -81,7 +81,7 @@ export const ShopContent: FC<ShopContentProps> = ({ products, setSort, setOrder,
         }
     ]
 
-
+    const wMedia = window.innerWidth
 
     return (
         <div className={s.section}>
@@ -155,6 +155,8 @@ export const ShopContent: FC<ShopContentProps> = ({ products, setSort, setOrder,
                                         description='bottom'
                                         imgSize={225}
                                         product={product}
+                                        width='100%'
+                                        fullsize={true}
                                     />
                                 </div>
                             )

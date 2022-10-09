@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { Dispatch, FC, SetStateAction, useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import { IPost } from '../../../models/IPost'
 import { ISearchPosts } from '../../../models/search/ISearchPosts'
@@ -7,7 +7,11 @@ import { convertDate } from '../../../Utils/convertDate'
 import { CreatePostImgLink } from '../../../Utils/img'
 import s from './recentPosts.module.css'
 
-export const RecentPosts = () => {
+interface RecentPostsProps {
+    setScrolled: Dispatch<SetStateAction<boolean>>
+}
+
+export const RecentPosts:FC<RecentPostsProps> = ({setScrolled}) => {
     const [posts, setPosts] = useState<IPost[]>([])
 
     const params: ISearchPosts = {
@@ -35,6 +39,7 @@ export const RecentPosts = () => {
                     <NavLink 
                         className={s.post_item}
                         key={_id}
+                        onClick={() => setScrolled(false)}
                         to={`/blog/${_id}`}
                     >
                         <img 

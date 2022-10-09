@@ -2,7 +2,7 @@
     display: flex;
     position: absolute;
     height: max-content;
-    left: 136px;
+    justify-content: space-around;
     bottom: 20px;
     padding: 4px 8px;
     border-radius: 30px;
@@ -22,11 +22,16 @@
 }
 /* product large size */
 .menu.right {
-    top: 60px;
+    
     height: max-content;
 }
 .menu.bottom {
-    top: 60px;
+
     left: 300px;
     height: max-content;
+}
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+    }
 }

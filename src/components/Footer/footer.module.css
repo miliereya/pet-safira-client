@@ -5,13 +5,21 @@
 .footer {
 	display: flex;
 }
+.col {
+	display: flex;
+	width: 50%;
+}
+.col_2 {
+	display: flex;
+	width: 50%;
+}
 .img {
 	margin-bottom: 24px;
 	width: 118px;
 	height: 28px;
 }
 .meta {
-	width: 31%;
+	width: 65%;
 }
 .meta div {
 	margin-bottom: 6px;
@@ -47,7 +55,7 @@
 }
 .info,
 .extra {
-	width: 19%;
+	width: 35%;
 	padding-left: 36px;
 }
 .title {
@@ -57,7 +65,7 @@
 	font-weight: 500;
 }
 .newsletter {
-	width: 31%;
+	width: 65%;
 }
 .newsletter p {
 	margin-bottom: 22px;
@@ -72,10 +80,60 @@
     width: 100%;
 	height: 100%;
     line-height: 22px;
+	font-size: 13px;
 	border: 1px solid #ededed;
 	border-radius: 30px 30px 30px 0;
 }
 input::placeholder {
     color: #222;
     opacity: .7;
+}
+@media (max-width:768px) {
+	.footer {
+		flex-direction: column;
+	}
+	.col {
+		width: 100%;
+	}
+	.col_2 {
+		flex-direction: row-reverse;
+		width: 100%;
+		margin-top: 20px;
+	}
+	.meta {
+		width: 65%;
+	}
+}
+@media (max-width:425px) {
+	.section {
+		margin-top: 10px;
+	}
+	.col {
+		flex-direction: column;
+	}
+	.col_2 {
+		flex-direction: column;
+	}
+	.meta {
+		width: 100%;
+	}
+	.newsletter {
+		width: 55%;
+	}
+	.extra {
+		width: 45%;
+	}
+	.meta div {
+		font-size: 15px;
+	}
+	.info,
+	.extra {
+		width: 100%;
+		margin-top: 10px;
+		padding-left: 0;
+	}
+	.newsletter {
+		width: 100%;
+		margin-top: 20px;
+	}
 }

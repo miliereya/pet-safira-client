@@ -94,7 +94,7 @@ const Header: FC = () => {
 
 						{store.isLoading === false && <div className={s.account}>
 							<div className={s.auth}>
-								{store.isAuth ? <NavLink to='/account'>
+								{store.isAuth ? <NavLink className={s.auth_description} to='/account'>
 									Account: <span className={s.email}>{store.user.email}</span>
 									<button className={s.btn_logout} onClick={() => store.logout()}>Logout</button>
 								</NavLink> :
@@ -110,7 +110,7 @@ const Header: FC = () => {
 									</div>}
 							</div>
 							<NavLink to='/cart' className={s.account__link}>
-								<CartSVG width={26} height={26} />
+								<CartSVG width={30} height={30} />
 								{store.user.cart && <span className={s.count}>{store.user.cart.length}</span>}
 							</NavLink>
 						</div>}

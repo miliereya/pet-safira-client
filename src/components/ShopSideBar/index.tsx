@@ -9,6 +9,7 @@ import CategoriesService from '../../services/CategoriesService';
 import { IProduct } from '../../models/IProduct';
 import ProductService from '../../services/ProductService';
 import { ISearchProducts } from '../../models/search/ISearchProducts';
+import { ArrowSVG } from '../svg';
 
 interface ShopSideBarProps {
     setSearch: any
@@ -23,6 +24,8 @@ export const ShopSideBar: FC<ShopSideBarProps> = ({ setSearch, isLoading, setSal
     const [input, setInput] = useState<string>('')
     const [searchProducts, setSearchProducts] = useState<IProduct[]>([])
     const [categories, setCategories] = useState<ICategory[]|any>([])
+    const [scrolled, setScrolled] = useState<boolean>(false)
+    const wMedia = window.innerWidth
 
     const params: ISearchProducts = {
         name: input
@@ -69,7 +72,7 @@ export const ShopSideBar: FC<ShopSideBarProps> = ({ setSearch, isLoading, setSal
     }
 
     return (
-        <div className={s.section}>
+        <div className={s.section} style={wMedia <= 768 ? scrolled ? {left: '1px'} : { left: '-320px' } : {}}>
             <div className={s.wrapper}>
                 <p className={s.heading}>
                     Search
@@ -105,7 +108,7 @@ export const ShopSideBar: FC<ShopSideBarProps> = ({ setSearch, isLoading, setSal
                                 className={s.product_item}
                                 key={_id}
                                 style={searchProducts.length === paddingCounter && paddingCounter !== 0 ? { border: 'none' } : {}}
-                                onClick={() => { setInput(name); setSearchProducts([]); searchHanlder() }}
+                                onClick={() => { setInput(name); setSearchProducts([]); searchHanlder(); setScrolled(false)}}
                             >
                                 <img 
                                     src={CreateProductImgLink(img, 120)} 
@@ -120,7 +123,7 @@ export const ShopSideBar: FC<ShopSideBarProps> = ({ setSearch, isLoading, setSal
                         )
                     })}</div>}
                 <button
-                    onClick={() => searchHanlder()}
+                    onClick={() => (searchHanlder(),setScrolled(false))}
                     className={s.button}
                     type='submit'
                     disabled={isLoading}
@@ -153,8 +156,22 @@ export const ShopSideBar: FC<ShopSideBarProps> = ({ setSearch, isLoading, setSal
                         Clear category
                     </button>
                 </div>
-
             </div>
+            <button
+                onClick={() => {setScrolled(true);setSearchProducts([])}}
+                className={s.btn_scroller}
+                style={scrolled ? { display: 'none' } : {}}
+            >
+                <ArrowSVG fill='#000' width={30} height={30} rotate={270} />
+                <p>Search</p>
+            </button>
+            <button
+                onClick={() => setScrolled(false)}
+                className={s.btn_closer}
+                style={!scrolled ? { display: 'none' } : {}}
+            >
+                <ArrowSVG width={60} height={60} rotate={90} />
+            </button>
         </div>
     )
 }

@@ -34,3 +34,24 @@
     font-size: 15px;
     text-decoration: line-through;
 }
+@media (max-width: 500px) {
+    .name {
+        height: 20px;
+        font-size: 13px;
+    }
+    .wrapperBottom {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .category {
+        color: var(--color-primary);
+    }
+    .price {
+        font-size: 14px;
+    }
+    .old_price {
+        font-size: 11px;
+        margin-left: 2px;
+    }
+}

@@ -120,3 +120,16 @@ input::placeholder {
     border-radius: 50%;
     background-color: var(--color-border);
 }
+@media (max-width: 768px) {
+    .auth_description {
+        display: none;
+    }
+}
+@media (max-width: 390px) {
+    .social {
+        display: none;
+    }
+    .auth {
+        display: none;
+    }
+}

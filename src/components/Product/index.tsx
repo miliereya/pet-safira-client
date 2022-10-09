@@ -9,19 +9,21 @@ import s from './product.module.css'
 interface IProductProps {
     product: any
     description: 'right' | 'bottom'
-    imgSize: 120|225|270|326|600
+    imgSize: 120 | 225 | 270 | 326 | 600
+    width?: string
+    fullsize?: boolean
 }
 
-export const Product: FC<IProductProps> = ({product, description, imgSize}) => {
+export const Product: FC<IProductProps> = ({ product, description, imgSize, width = 'auto', fullsize = false }) => {
     const [menuToggle, setMenuToggle] = useState(false)
 
-    const handleMenuToggle = (e:any) => {
-		if (e.type === 'mouseenter') {
-			setMenuToggle(true)
-		} else {
-			setMenuToggle(false)
-		}
-	}
+    const handleMenuToggle = (e: any) => {
+        if (e.type === 'mouseenter') {
+            setMenuToggle(true)
+        } else {
+            setMenuToggle(false)
+        }
+    }
     const productData: IProduct = product
 
     const {
@@ -37,20 +39,20 @@ export const Product: FC<IProductProps> = ({product, description, imgSize}) => {
     const Coldprice = setCurrency(oldprice)
 
     return (
-        <div 
+        <div
             className={s.section}
             key={_id}
-            onMouseEnter={handleMenuToggle} 
+            onMouseEnter={handleMenuToggle}
             onMouseLeave={handleMenuToggle}
-            style={{flexDirection: description==='bottom' ? 'column' : 'row'}}
+            style={{ flexDirection: description === 'bottom' ? 'column' : 'row', width: width }}
         >
-            {Coldprice !== '' ? 
+            {Coldprice !== '' ?
                 <SaleTag productSize={imgSize < 200 ? 'sm' : 'lg'} />
                 : ''
             }
-            <FullSizeImg link_id={_id} alt={name} size={imgSize} slug={img}/>
+            <FullSizeImg link_id={_id} alt={name} size={imgSize} slug={img} fullsize={fullsize} />
             <Hovermenu link_id={_id} menuToggle={menuToggle} location={description} />
-            <div 
+            <div
                 className={description === 'bottom' ? s.wrapperBottom : s.wrapperRight}
             >
                 <p className={s.name}>{name}</p>

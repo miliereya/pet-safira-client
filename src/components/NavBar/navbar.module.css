@@ -69,3 +69,19 @@
     line-height: 15px;
     font-size: 13px;
 }
+.burger_wrapper {
+    display: none;
+}
+@media (max-width: 768px) {
+    .nav {
+        display: none;
+    }
+    .burger_wrapper {
+        display: block;
+    }
+}
+@media (max-width: 510px) {
+    .btn {
+        display: none;
+    }
+}

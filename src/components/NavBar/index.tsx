@@ -2,10 +2,11 @@ import { useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import phone from '../../assets/images/phone.png'
 import { ButtonPrimary } from '../UI/Buttons/ButtonPrimary'
+import { Burger } from './Burger'
 import s from './navbar.module.css'
 
 export const Navbar = () => {
-    const [sticky, setSticky] = useState(false)
+	const [sticky, setSticky] = useState<boolean>(false)
 
 	const fixNavbarToTop = () => {
 		if (window.scrollY >= 150) {
@@ -27,16 +28,20 @@ export const Navbar = () => {
 		<div className={`${s.navbar} ${sticky ? `${s.sticky}` : ''} `}>
 			<div className='container'>
 				<div className={s.bottom}>
-					<ButtonPrimary 
-						text="@miliereya" 
-						margin="0 45px 0 0" 
-						padding="5px 27px" 
-						fontSize="18px"
-						borderRadius="20px 20px 0 0"
-						onClick={function(){
-							window.location.href = 'https://github.com/miliereya'
-						}}
-					/>
+					<div className={s.burger_wrapper}>
+						<Burger />
+					</div>
+						<ButtonPrimary
+							text="@miliereya"
+							margin="0 45px 0 20px"
+							padding="5px 27px"
+							fontSize="18px"
+							borderRadius="20px 20px 0 0"
+							onClick={function () {
+								window.location.href = 'https://github.com/miliereya'
+							}}
+							className={s.btn}
+						/>
 					<nav className={s.nav}>
 						<NavLink className={s.nav__link} to='/'>
 							Home

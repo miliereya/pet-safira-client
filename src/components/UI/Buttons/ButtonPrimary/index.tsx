@@ -15,6 +15,7 @@ interface ButtonPrimaryProps extends DefStyles{
     text: string
     onClick?: any
     disabled?: boolean
+    className?: any
 }
 
 export const ButtonPrimary: FC<ButtonPrimaryProps> = ({
@@ -27,7 +28,8 @@ export const ButtonPrimary: FC<ButtonPrimaryProps> = ({
     padding,
     borderRadius,
     onClick,
-    disabled = false
+    disabled = false,
+    className
 }) => {
 
     const [isHover, setIsHover] = useState(false);
@@ -77,6 +79,7 @@ export const ButtonPrimary: FC<ButtonPrimaryProps> = ({
             style={styleParams}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
+            className={className}
         >
             {text}
         </button>

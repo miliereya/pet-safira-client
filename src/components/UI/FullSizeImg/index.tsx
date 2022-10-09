@@ -8,6 +8,7 @@ interface FullSizeImgProps {
     slug: string
     link_id?: string
     margin?: string
+    fullsize?: boolean
 }
 
 interface styles {
@@ -17,11 +18,11 @@ interface styles {
     margin: string
 }
 
-export const FullSizeImg:FC<FullSizeImgProps> = ({alt, slug, size, link_id, margin = '0 auto'}) => {
+export const FullSizeImg:FC<FullSizeImgProps> = ({alt, slug, size, link_id, margin = '0 auto', fullsize = false}) => {
     const useStyles = (val: string|number):styles=>{
         return {
-            width: `${val}px`,
-            height: `${val}px`,
+            width: fullsize ? '100%' : `${val}px`,
+            height: fullsize ? '100%' : `${val}px`,
             margin: margin, 
             cursor: link_id ? 'pointer' : ''
         }

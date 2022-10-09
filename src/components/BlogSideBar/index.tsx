@@ -8,6 +8,7 @@ import { useNavigate } from 'react-router-dom'
 import { IPost } from '../../models/IPost';
 import { ISearchPosts } from '../../models/search/ISearchPosts';
 import PostService from '../../services/PostService';
+import { ArrowSVG } from '../svg';
 
 interface BlogSideBarProps {
     setSearch: Dispatch<SetStateAction<string>>
@@ -16,6 +17,9 @@ interface BlogSideBarProps {
 export const BlogSideBar: FC<BlogSideBarProps> = ({ setSearch }) => {
     const [input, setInput] = useState<string>('')
     const [searchPosts, setSearchPosts] = useState<IPost[]>([])
+    const [scrolled, setScrolled] = useState<boolean>(false)
+    const wMedia = window.innerWidth
+
 
     const nav = useNavigate()
     const params: ISearchPosts = {
@@ -53,7 +57,7 @@ export const BlogSideBar: FC<BlogSideBarProps> = ({ setSearch }) => {
 
 
     return (
-        <div className={s.section}>
+        <div className={s.section} style={wMedia <= 768 ? scrolled ? {} : { left: '-320px' } : {}}>
             <div className={s.wrapper}>
                 <p className={s.heading}>Search</p>
                 <Divider margin='5px 0 10px' />
@@ -86,7 +90,7 @@ export const BlogSideBar: FC<BlogSideBarProps> = ({ setSearch }) => {
                     })}
                 </div>}
                 <button
-                    onClick={() => searchHanlder()}
+                    onClick={() => (searchHanlder(), setScrolled(false))}
                     className={s.button}
                     type='submit'
                 >
@@ -94,8 +98,23 @@ export const BlogSideBar: FC<BlogSideBarProps> = ({ setSearch }) => {
                 </button>
                 <p className={s.heading}>RECENT POSTS</p>
                 <Divider margin='5px 0 10px' />
-                <RecentPosts />
+                <RecentPosts setScrolled={setScrolled}/>
             </div>
+            <button
+                onClick={() => setScrolled(true)}
+                className={s.btn_scroller}
+                style={scrolled ? { display: 'none' } : {}}
+            >
+                <ArrowSVG fill='#000' width={30} height={30} rotate={270} />
+                <p>Search</p>
+            </button>
+            <button
+                onClick={() => setScrolled(false)}
+                className={s.btn_closer}
+                style={!scrolled ? { display: 'none' } : {}}
+            >
+                <ArrowSVG width={60} height={60} rotate={90} />
+            </button>
         </div>
     )
 }

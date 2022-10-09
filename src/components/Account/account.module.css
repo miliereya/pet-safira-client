@@ -18,3 +18,8 @@
     background-color: var(--color-primary);
     color: var(--color-white);
 }
+@media (max-width: 425px) {
+    .section {
+        margin: 60px 0 50px;
+    }
+}

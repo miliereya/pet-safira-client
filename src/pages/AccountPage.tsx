@@ -6,6 +6,7 @@ import LoginForm  from "../components/LoginForm"
 import RegisterForm from "../components/RegisterForm"
 import { Breadcrumbs } from "../components/UI/Breadcrumbs"
 import { PageSpinner } from "../components/UI/Loaders/PageSpinner"
+import s from './pages.module.css'
 
 const AccountPage:FC = () => {
     const {store} = useContext(Context)
@@ -18,7 +19,7 @@ const AccountPage:FC = () => {
         return (
             <>
                 <Breadcrumbs />
-                <div style={{display: 'flex', justifyContent: 'space-between', width: '800px', margin: '0 auto'}}>
+                <div className={s.AccountPage_container}>
                     <LoginForm />
                     <RegisterForm />
                 </div>
