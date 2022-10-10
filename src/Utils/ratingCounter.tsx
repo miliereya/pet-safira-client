@@ -12,7 +12,7 @@ export const ratingCounter = (rating:number):number => {
         pixDiff = 4.5
     }
 
-    let ratingPx = rating * 12.5 + rating*3 - pixDiff
+    let ratingPx = rating * 12.5 + rating*3 - pixDiff - 1
 
     return ratingPx
 }

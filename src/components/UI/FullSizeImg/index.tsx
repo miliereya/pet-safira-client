@@ -2,10 +2,12 @@ import { FC } from "react"
 import { NavLink } from "react-router-dom"
 import { CreateProductImgLink } from "../../../Utils/img"
 
+export type TProductImgSize = 120|225|270|326|425|600
+
 interface FullSizeImgProps {
     alt: string
-    size: 120|225|270|326|600
     slug: string
+    size: TProductImgSize
     link_id?: string
     margin?: string
     fullsize?: boolean

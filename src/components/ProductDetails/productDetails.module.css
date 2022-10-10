@@ -13,11 +13,13 @@
 .rating_container {
     display: flex;
     position: relative;
-    width: 300px;
+    width: 220px;
     margin-top: 20px;
 }
 .rating {
-    height: 12px;
+    margin-top: 1px;
+    margin-left: 1px;
+    height: 10px;
     background-color: #febd5b;
     position: absolute;
     z-index: -1;
@@ -76,7 +78,6 @@
     margin-bottom: 15px;
 }
 .sign_link {
-    margin-left: 210px;
     font-size: 17px;
     text-decoration: underline;
     color: var(--color-primary);
@@ -88,6 +89,8 @@
     padding: 13px;
     border: 2px solid var(--color-border);
     border-radius: 5px;
+    z-index: 2;
+    background-color: #fff;
 }
 .oof {
     width: max-content;
@@ -97,4 +100,84 @@
     font-size: 36px;
     border: 2px solid var(--color-primary);
     border-radius: 2px;
+}
+.animation_wrapper {
+    width: min-content;
+    position: absolute;
+    animation: cartEffect 0.7s;
+    margin-left: 125px;
+    z-index: 1;
+}
+
+@keyframes cartEffect { 
+    0% {opacity: 0;margin-top: -30px;}
+    50% {opacity: 1;margin-top: -70px}
+    100% {opacity: 0;margin-top: -30px;}
+}
+@media (max-width: 768px) {
+    .wrapper {
+        flex-direction: column;
+        padding: 0 60px;
+    }
+    .rating_container {
+        margin-top: 5px;
+    }
+    .desc_column {
+        margin: 20px 0 0;
+    }
+    .price {
+        margin: 20px 0 12px;
+        font-size: 32px;
+    }
+    .old_price {
+        margin-left: 10px;
+        font-size: 28px;
+    }
+    .index {
+        font-size: 22px;
+    }
+    .index_span {
+        font-size: 22px;
+    }
+}
+@media (max-width: 560px) {
+    .name {
+        font-size: 36px;
+    }
+    .wrapper {
+        padding: 0 5px;
+        margin-bottom: 20px;
+    }
+   
+}
+@media (max-width: 440px) {
+    .name {
+        font-size: 24px;
+    }
+    .quantity {
+        display: none;
+    }
+    .input {
+        margin-left: 0;
+        padding: 13px 7px;
+        width: 80px;
+    }
+    .animation_wrapper {
+        margin-left: 29px;
+    }
+    .index {
+        font-size: 16px;
+    }
+    .index_span {
+        font-size: 16px;
+    }
+    .description {
+        margin-top: 20px;
+    }
+    .price {
+        font-size: 24px;
+    }
+    .old_price {
+        font-size: 22px;
+    }
 }

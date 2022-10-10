@@ -51,10 +51,20 @@ export const FullWidthSlider:FC<FullWidthSliderProps>  = (
 			slidesToSlide: 1,
 		},
 		tablet: {
-			breakpoint: { max: 1024, min: 464 },
-			items: 5,
+			breakpoint: { max: 768, min: 550 },
+			items: 4,
+		},
+		mobile: {
+			breakpoint: { max: 550, min: 360 },
+			items: 3
+		},
+		smMobile: {
+			breakpoint: { max: 360, min: 320 },
+			items: 2
 		}
 	}
+
+    const wMedia = window.innerWidth
 
     return (
         <div style={{marginTop: marginTop}}>
@@ -74,11 +84,12 @@ export const FullWidthSlider:FC<FullWidthSliderProps>  = (
                 {products[0] !== 'fake' ? (products.map((product:IProduct) => {
 					if(product._id === sameProduct_id) return
 					return (
-						<div key={product._id}>
+						<div key={product._id} className={s.product}>
 							<Product
 								product={product}
 								description='bottom'
 								imgSize={225}
+								fullsize={wMedia < 1180}
 							/>
 						</div>
 					)

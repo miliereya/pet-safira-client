@@ -34,6 +34,12 @@
     font-size: 15px;
     text-decoration: line-through;
 }
+@media (max-width: 1000px) {
+    .name {
+        height: 20px;
+        font-size: 15px;
+    }
+}
 @media (max-width: 500px) {
     .name {
         height: 20px;

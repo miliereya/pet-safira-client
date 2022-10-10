@@ -24,3 +24,8 @@
     right: 20px;
     transform: scale(-1);
 }
+@media (max-width: 1180px) {
+    .product {
+        margin-right: 4px;
+    }    
+}
