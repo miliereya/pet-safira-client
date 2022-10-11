@@ -29,3 +29,8 @@
         margin-right: 4px;
     }    
 }
+@media (max-width: 600px) {
+    .heading {
+        font-size: 26px;
+    }
+}

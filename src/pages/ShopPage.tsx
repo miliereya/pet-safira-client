@@ -18,6 +18,7 @@ export const ShopPage = () => {
     const [choosenPage, setChoosenPage] = useState(1)
     const [isLoading, setIsLoading] = useState<boolean>(true)
 
+
     const params: ISearchProducts = {
         order: order,
         sort: sort,
@@ -49,6 +50,7 @@ export const ShopPage = () => {
 			clearTimeout(debounce)
 		}
     },[sort, order, search, sale, category])
+
 
     return (
         <div>

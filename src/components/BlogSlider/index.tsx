@@ -35,22 +35,19 @@ export const BlogSlider = () => {
 			items: 3,
 		},
 		desktop: {
-			breakpoint: { max: 3000, min: 1024 },
+			breakpoint: { max: 3000, min: 600 },
 			items: 3,
 		},
 		tablet: {
-			breakpoint: { max: 1024, min: 464 },
-			items: 3,
-		},
-		mobile: {
-			breakpoint: { max: 464, min: 0 },
-			items: 3,
-		},
+			breakpoint: { max: 600, min: 320 },
+			items: 2,
+		}
 	}
 
 	const handleBtnGroupToggle = (e:any) => {
 		e.type === 'mouseenter' ? setBtnShow(true) : setBtnShow(false)
 	}
+    const wMedia = window.innerWidth
 
     return (
         <div className={s.section}>
@@ -87,7 +84,7 @@ export const BlogSlider = () => {
                                         <div className={s.body}>
                                             <div className={s.meta}>
                                                 <p className={s.title}>{title}</p>
-                                                {convertDate(date)}{' '}
+                                                {wMedia > 768 ? convertDate(date) : ''}
                                             </div>
                                             <NavLink to={`/blog/${_id}`} className={s.text}>
                                                 {text}

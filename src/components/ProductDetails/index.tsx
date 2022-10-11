@@ -122,7 +122,7 @@ const ProductDetails: FC<ProductDetailsProps> = (product) => {
                             <p className={s.index}>Quantity</p>
                         </div>
                         <div className={s.col}>
-                            <p className={s.index_span}>{category}</p>
+                        <NavLink to={`/shop/${category}`}><p className={s.index_span}>{category}</p></NavLink>
                             <p className={s.index_span}>{`"${company}"`}</p>
                             <p className={s.index_span}>{quantity}</p>
                         </div>

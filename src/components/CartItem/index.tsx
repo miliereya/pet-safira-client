@@ -21,10 +21,12 @@ export const CartItem:FC<CartItemProps> = ({item, deleteHanlder}) => {
         price: price.toString()
     }
 
+    const wMedia = window.innerWidth
+
     return (
         <div className={s.item}>
-            <NavLink to={`/product/${id}`}>
-                <FullSizeImg  alt={name} slug={img} size={120}/>
+            <NavLink to={`/product/${id}`} className={s.product}>
+                <FullSizeImg  alt={name} slug={img} size={120} fullsize={wMedia <= 768} />
             </NavLink>
             <span className={s.name}>{name}</span>
             <span className={s.quantity}>{quantity}</span>

@@ -35,15 +35,21 @@ export const BestSellers = () => {
 			slidesToSlide: 1,
 		},
 		desktop: {
-			breakpoint: { max: 3000, min: 1024 },
+			breakpoint: { max: 3000, min: 580 },
 			items: 2,
 			slidesToSlide: 1,
 		},
 		tablet: {
-			breakpoint: { max: 1024, min: 464 },
+			breakpoint: { max: 580, min: 426 },
+			items: 3,
+		},
+		mobile: {
+			breakpoint: { max: 426, min: 320 },
 			items: 2,
 		}
 	}
+
+	const wMedia = window.innerWidth
 
 	return (
 		<div className={s.block}>
@@ -61,14 +67,15 @@ export const BestSellers = () => {
 			>
 				{bestsellers.map((col:[], index:number) => {
 					return (
-						<div key={index}>
+						<div key={index} className={s.product_col}>
 							{bestsellers[0][0] !== 'fake' ? (col.map((product:IProduct) => {
 								return (
 									<div key={product._id}>
 										<Product 
 											product={product}
-											description='right'
+											description={wMedia > 580 ? 'right' : 'bottom'}
 											imgSize={120}
+											fullsize={wMedia <= 580}
 										/>
 									</div>
 								)

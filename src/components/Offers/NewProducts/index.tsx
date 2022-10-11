@@ -41,10 +41,16 @@ export const NewProducts = () => {
 			slidesToSlide: 1,
 		},
 		tablet: {
-			breakpoint: { max: 1024, min: 464 },
+			breakpoint: { max: 1024, min: 425 },
 			items: 3,
+		},
+		mobile: {
+			breakpoint: { max: 425, min: 320 },
+			items: 2,
 		}
 	}
+	const wMedia = window.innerWidth
+
 
 	return (
 		<div className={s.block}>
@@ -62,7 +68,7 @@ export const NewProducts = () => {
 			>
 				{newproducts.map((col:[], index:number) => {
 					return (
-						<div key={index}>
+						<div key={index} className={s.porudct_col}>
 							{newproducts[0][0] !== 'fake' ? (col.map((product:IProduct) => {
 								return (
 									<div key={product._id}>
@@ -70,6 +76,7 @@ export const NewProducts = () => {
 											product={product}
 											description='bottom'
 											imgSize={225}
+											fullsize={wMedia <= 768}
 										/>
 									</div>
 								)

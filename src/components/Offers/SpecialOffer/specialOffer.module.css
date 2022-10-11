@@ -2,6 +2,11 @@
     margin-top: 50px;
 }
 .img {
-    width: 371px;
-    height: 544px;
+    width: 100%;
+}
+@media (max-width: 950px) {
+    .section {
+        margin-top: 0;
+        width: 50%;
+    }
 }

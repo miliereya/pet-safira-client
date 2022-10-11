@@ -24,3 +24,9 @@
     font-size: 30px;
     color: var(--color-dark);
 }
+@media (max-width: 580px) {
+    .product_col {
+        width: 95%;
+        margin: 0;
+    }
+}

@@ -19,3 +19,8 @@
     margin-top: 10px;
     background-color: var(--color-loader);
 }
+@media (max-width: 600px) {
+    .img {
+        height: 300px;
+    }
+}

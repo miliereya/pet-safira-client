@@ -7,9 +7,10 @@ export const FakeArray = ['fake', 'fake', 'fake', 'fake', 'fake', 'fake', 'fake'
 interface IProductLoaderProps {
     description: 'right' | 'bottom'
     imgSize: 120|225|270|326|600
+    fullSize?: boolean
 }
 
-export const ProductLoader: FC<IProductLoaderProps> = ({description, imgSize}) => {
+export const ProductLoader: FC<IProductLoaderProps> = ({description, imgSize, fullSize = false}) => {
 
     return (
         <div 
@@ -18,7 +19,10 @@ export const ProductLoader: FC<IProductLoaderProps> = ({description, imgSize}) =
         >
             <div 
                 className={s.img} 
-                style={{
+                style={fullSize ? {
+                    width: '100%',
+                    height: '100%'
+                } : {
                     width: `${imgSize}px`,
                     height: `${imgSize}px`
                 }}

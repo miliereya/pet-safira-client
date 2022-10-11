@@ -72,3 +72,47 @@
         text-align: center;
     }   
 }
+@media (max-width: 900px) {
+    .name {
+        font-size: 13px;
+        margin-left: 20px;
+    }
+}
+@media (max-width: 768px) {
+    .product {
+        width: 20%;
+        margin: 0;
+        margin-right: 2%;
+        text-align: center;
+    }
+    .name {
+        width: 30%;
+        margin: 0;
+        margin-right: 2%;
+        text-align: center;
+    }
+    .quantity {
+        width: 14%;
+        margin: 0;
+        margin-right: 2%;
+        text-align: center;
+    }
+    .price {
+        width: 20%;
+        margin: 0;
+        margin-right: 2%;
+        text-align: center;
+    }
+}
+@media (max-width: 500px){
+    .name {
+        font-size: 11px;
+    }
+    .quantity {
+        font-size: 12px;
+        font-weight: 500;
+    }
+    .price {
+        font-size: 12px;
+    }
+}

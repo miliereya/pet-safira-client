@@ -6,13 +6,15 @@ import s from "./offers.module.css"
 
 export const Offers = () => {
     
+    const wMedia = window.innerWidth
+
     return (
         <div className={s.section}>
             <div className="container">
                 <div className={s.wrapper}>
                     <div className={s.left}>
                         <DealWeek />
-                        <SpecialOffer />
+                        {wMedia > 580 && <SpecialOffer />}
                     </div>
                     <div className={s.right}>
                         <BestSellers />

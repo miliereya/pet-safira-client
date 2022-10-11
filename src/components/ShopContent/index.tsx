@@ -4,6 +4,7 @@ import { calculatePagginationArray, calculateShowingResults } from '../../Utils/
 import { Product } from '../Product'
 import { ArrowSVG } from '../svg'
 import { Arrow } from '../UI/Arrow'
+import { FullPageSpinner } from '../UI/Loaders/FullPageSpinner'
 import { FakeArray, ProductLoader } from '../UI/Loaders/ProductLoader'
 import s from './shopContent.module.css'
 
@@ -135,13 +136,13 @@ export const ShopContent: FC<ShopContentProps> = ({ products, setSort, setOrder,
                 </p>}
             </div>
             <div className={s.product_list}>
-                {isLoading === true ? FakeArray.map((product, index) => {
+                {isLoading === true ? wMedia > 1000 ? FakeArray.map((product, index) => {
                     return (
                         <div className={s.product} key={index}>
-                            <ProductLoader description='bottom' imgSize={225} />
+                            <ProductLoader description='bottom' imgSize={wMedia > 768 ? 225 : 120} fullSize={wMedia < 568} />
                         </div>
                     )
-                })
+                }) : <FullPageSpinner />
                     : products.length === 0 ?
                         <div className={s.nwf}>
                             Nothing was found...

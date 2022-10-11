@@ -7,8 +7,8 @@ import AddProduct from './CmsComponents/AddProduct'
 import { ProductList } from './CmsComponents/ProductList'
 
 export const CmsPage = () => {
-
     const [categories, setCategories] = useState<ICategory[] | any>([])
+    const wMedia = window.innerWidth
     
     useEffect(() => {
         const fetchData = async () => {
@@ -21,7 +21,13 @@ export const CmsPage = () => {
         }
         fetchData()
     }, [])
-
+    if(wMedia <= 768) {
+        return (
+            <div className={s.warning}>
+                This page is not supported on mobile or tablet 
+            </div>
+        )
+    }
     return (
         <div className="container">
             <p className={s.heading}>ALPHA VERSION</p>

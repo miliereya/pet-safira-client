@@ -3,24 +3,34 @@ import { BlogSlider } from "../components/BlogSlider"
 import { OfferLinks } from "../components/OfferLinks"
 import { Offers } from "../components/Offers"
 import { AdPoster } from "../components/UI/AdPoster"
+import { FullPageSpinner } from "../components/UI/Loaders/FullPageSpinner"
 import { FullWidthSlider } from "../components/UI/Sliders/FullWidthSlider"
 import { IAdPoster } from "../models/IAdPoster"
 import AdPosterService from "../services/AdPosterService"
 
 export const MainPage = () => {
     const [adPosters, setAdPosters] = useState<IAdPoster[]>([])
+    const [isLoading, setIsLoading] = useState<boolean>(false)
     
     useEffect(() => {
         const fetchPosters = async () => {
+            setIsLoading(true)
             try {
                 const res = await AdPosterService.getAdPosters()
                 setAdPosters(res.data)
             } catch (e) {
                 console.log(e)
+            } finally {
+                setIsLoading(false)
             }
         }
         fetchPosters()
     },[])
+    const wMedia = window.innerWidth
+
+    if(isLoading && wMedia <= 768) {
+        return <FullPageSpinner />
+    }
 
     return (
         <>

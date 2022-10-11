@@ -22,3 +22,8 @@
 .btn:hover svg path {
     fill: var(--color-dark-light);
 }
+@media (max-width: 380px) {
+    .btn {
+        font-size: 11px;
+    }
+}

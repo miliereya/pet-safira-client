@@ -1,4 +1,5 @@
 import { FC, useState } from 'react'
+import { NavLink } from 'react-router-dom'
 import { IProduct } from '../../models/IProduct'
 import { setCurrency } from '../../Utils/currency'
 import { FullSizeImg } from '../UI/FullSizeImg'
@@ -56,7 +57,7 @@ export const Product: FC<IProductProps> = ({ product, description, imgSize, widt
                 className={description === 'bottom' ? s.wrapperBottom : s.wrapperRight}
             >
                 <p className={s.name}>{name}</p>
-                <p className={s.category}>{category}</p>
+                <NavLink to={`/shop/${category}`}><p className={s.category}>{category}</p></NavLink>
                 {Coldprice !== '' ?
                     <p className={s.price}>{Cprice}<span className={s.old_price}>{Coldprice}</span></p> :
                     <p className={s.price} style={{ color: 'var(--color-dark)' }}>{Cprice}</p>

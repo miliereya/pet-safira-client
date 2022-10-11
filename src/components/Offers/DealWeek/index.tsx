@@ -14,7 +14,7 @@ export const DealWeek = () => {
 	useEffect(() => {
 		const fetchData = async () => {
 			try {
-				const res = await ProductService.getProduct({index: 'deal of the week'})
+				const res = await ProductService.getProduct({ index: 'deal of the week' })
 				setProduct(res.data)
 			} catch (e) {
 				console.log(e)
@@ -31,25 +31,25 @@ export const DealWeek = () => {
 			<h3 className={s.heading}>Deals Of The Week</h3>
 
 			{product === null ? (
-			<div className={s.back_loader}>
-				<div className={s.loader}>
-				</div>
-				<div className={s.loader_bar_1}></div>
-				<div className={s.loader_bar_2}></div>
-				<div className={s.loader_bar_2}></div>
-				<div className={s.loader_bar_2}></div>
-			</div>) : (
+				<div className={s.back_loader}>
+					<div className={s.loader}>
+					</div>
+					<div className={s.loader_bar_1}></div>
+					<div className={s.loader_bar_2}></div>
+					<div className={s.loader_bar_2}></div>
+					<div className={s.loader_bar_2}></div>
+				</div>) : (
 				<div key={product._id} className={s.wrapper}>
 					<div className={s.content}>
+						<SaleTag productSize='lg' />
+						<img className={s.img} src={CreateProductImgLink(product.img, 600)} />
+						<h2 className={s.name}>{product.name}</h2>
+						<NavLink to={`/shop/${product.category}`}><h3 className={s.category}>{product.category}</h3></NavLink>
+						<p className={s.newprice}>
+							{product.oldprice ? setCurrency(product.price) : ''}
+							<span className={s.price}>{setCurrency(product.oldprice)}</span>
+						</p>
 						<NavLink to={`/product/${product._id}`}>
-							<SaleTag productSize='lg'/>
-							<img className={s.img} src={CreateProductImgLink(product.img, 600)} />
-							<h2 className={s.name}>{product.name}</h2>
-							<h3 className={s.category}>{product.category}</h3>
-							<p className={s.newprice}>
-								{product.oldprice ? setCurrency(product.price) : ''}
-								<span className={s.price}>{setCurrency(product.oldprice)}</span>
-							</p>
 							<ButtonPrimary margin='20px 0 0 0' text='add to cart' />
 						</NavLink>
 					</div>

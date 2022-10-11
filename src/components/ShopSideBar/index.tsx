@@ -10,6 +10,7 @@ import { IProduct } from '../../models/IProduct';
 import ProductService from '../../services/ProductService';
 import { ISearchProducts } from '../../models/search/ISearchProducts';
 import { ArrowSVG } from '../svg';
+import { useLocation } from 'react-router-dom';
 
 interface ShopSideBarProps {
     setSearch: any
@@ -32,6 +33,8 @@ export const ShopSideBar: FC<ShopSideBarProps> = ({ setSearch, isLoading, setSal
     }
 
     let paddingCounter: number = 0
+    let pathname = useLocation().pathname
+    let link_category = pathname.slice(6)
 
     useEffect(() => {
         if (input.length > 2) {
@@ -55,6 +58,11 @@ export const ShopSideBar: FC<ShopSideBarProps> = ({ setSearch, isLoading, setSal
             try {
                 const res = await CategoriesService.getCategories()
                 setCategories(res.data)
+                for(let i = 0; i < res.data.length; i++) {
+                    if(res.data[i].name === link_category){
+                        setCategory(res.data[i].name )
+                    }
+                }
             } catch (e) {
                 console.log(e)
             }

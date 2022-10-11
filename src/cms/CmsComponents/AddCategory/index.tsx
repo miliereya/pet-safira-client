@@ -63,7 +63,7 @@ const AddCategory:FC<AddCategoryProps> = ({categories}) => {
                 })}
             </div>
             <p className={s.error}>{error!=='' ? '*' : ''}{error}</p>
-            <button onClick={() => addCategoryHandler()} className={s.add_btn}>Add product</button>
+            <button onClick={() => addCategoryHandler()} className={s.add_btn}>Add category</button>
         </div>
     )
 }

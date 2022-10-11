@@ -8,10 +8,10 @@ export const OfferLinks = () => {
         <div className="container">
             <div className={s.section}>
                 <NavLink to="/shop">
-                    <img src={vegetables} alt="link" />
+                    <img src={vegetables} alt="link" className={s.img}/>
                 </NavLink>
                 <NavLink to="/shop">
-                    <img src={fruits} alt="link" />
+                    <img src={fruits} alt="link" className={s.img}/>
                 </NavLink>
             </div>
         </div>
