@@ -1,1 +1,1 @@
-export const backendSRC = 'https://safira-server.herokuapp.com'
+export const backendSRC = 'https://safira-food-market-server.herokuapp.com'
