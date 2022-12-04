@@ -76,6 +76,7 @@ button {
 	padding-right: 15px;
 	padding-left: 15px;
 }
+
 @media(max-width: 425px) {
 	.container {
 		padding: 0 7px;
