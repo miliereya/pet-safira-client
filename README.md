@@ -1,6 +1,6 @@
 # Full-stack Food Market
 
-This app was made using React + MobX. It allows you to sign in / up, search different products by custom parameteres, add or remove them from a cart. Also there's a blog page with posts search and an Admim page. Backend was created on Express.js and as a database - MongoDB.
+This app was made using React + MobX. It allows you to sign in / up, search different products by custom parameters, add or remove them from a cart. Also there's a blog page with posts search and an Admin page. Backend was created on Express.js and as a database - MongoDB.
 
 Warning! Sometimes heroku apps don't upload immediatly, so you'll need to reload the page
 
